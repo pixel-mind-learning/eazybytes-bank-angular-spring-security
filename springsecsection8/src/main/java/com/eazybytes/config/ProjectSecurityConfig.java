@@ -46,7 +46,7 @@ public class ProjectSecurityConfig {
                     }
                 }))
                 .csrf(csrfConfig -> csrfConfig.csrfTokenRequestHandler(csrfTokenRequestAttributeHandler)
-                        .ignoringRequestMatchers( "/contact","/register")
+                        .ignoringRequestMatchers("/contact", "/register")
                         // client app of JavaScript code, will be able to read the cookie, oterwise will not be able to read cookie
                         .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()))
                 .addFilterAfter(new CsrfCookieFilter(), BasicAuthenticationFilter.class)
@@ -82,5 +82,4 @@ public class ProjectSecurityConfig {
     public CompromisedPasswordChecker compromisedPasswordChecker() {
         return new HaveIBeenPwnedRestApiPasswordChecker();
     }
-
 }

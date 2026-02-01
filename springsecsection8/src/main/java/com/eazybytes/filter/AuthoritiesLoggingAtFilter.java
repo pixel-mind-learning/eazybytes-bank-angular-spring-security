@@ -5,6 +5,8 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 
+// Since we'll not have control on the order of the filters, and it is random in nature
+// we should avoid providing the filters at same order using this filter, feel free to user filter after or before
 @Slf4j
 public class AuthoritiesLoggingAtFilter implements Filter {
     /**
